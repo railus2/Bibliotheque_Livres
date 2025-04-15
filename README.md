@@ -1,4 +1,4 @@
-"# Bibliotheque_Livres" 
+"# Bibliotheque_Livres" Frontend : Angular,   Backend : Laravel
 
 ![Capture d'écran 2025-01-15 164318](https://github.com/user-attachments/assets/bf5aa03d-a4db-4aa4-b3f5-1ede02af7fbd)
 ![Capture d'écran 2025-01-15 164323](https://github.com/user-attachments/assets/42515bdb-9e89-478a-83d1-b57950c4056a)
