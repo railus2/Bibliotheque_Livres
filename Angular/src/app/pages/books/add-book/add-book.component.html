@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-md-4 hover">
+        <div class="card card-user">
+            <div class="image" (click)="openFileExplorer()">
+                <img src="assets/img/book_placeholder.jpg" alt="Image a ajouté">
+            </div>
+
+        </div>
+    </div>
+    <div class="col-md-8">
+        <div class="card card-user">
+            <div class="card-header">
+                <h5 class="card-title">Ajouter livre</h5>
+            </div>
+            <div class="card-body">
+                <form (submit)="save()">
+                    <div class="row">
+                        <div class="col-md-5 pr-1">
+                            <div class="form-group">
+                                <label>Titre</label>
+                                <input type="text" class="form-control" placeholder="Titre du livre"  name="title" #titleInput>
+                            </div>
+                        </div>
+                        <div class="col-md-3 px-1">
+                            <div class="form-group">
+                                <label>Auteur</label>
+                                <input type="text" class="form-control" placeholder="Auteur"   name="author" #authorInput>
+                            </div>
+                        </div>
+                         <div class="col-md-4 pl-1">
+                            <div class="form-group">
+                                <label for="exampleInputEmail1">Date de publication</label>
+                                <input type="date" class="form-control"  name="publication_date" #publicationDateInput>
+                            </div>
+                         </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4 pr-1">
+                            <div class="form-group">
+                                <label>ISBN</label>
+                                <input type="text" class="form-control" placeholder="ISBN"   name="isbn" #isbnInput>
+                            </div>
+                        </div>
+                         <div class="col-md-4 pr-1">
+                            <div class="form-group">
+                                <label>Categorie</label>
+                                 <input type="text" class="form-control" placeholder="Categorie"    name="category" #categoryInput>
+                            </div>
+                        </div>
+                    
+                        <div class="col-md-4 pl-1">
+                            <div class="form-group">
+                                <label>Note</label>
+                                  <input type="number" class="form-control"  min="0" max="5" step="0.1" name="rating" #ratingInput>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label>Résumé</label>
+                                <textarea type="text" class="form-control textarea" rows="5" placeholder="Résumé"  name="summary" #summaryInput></textarea>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="update ml-auto mr-auto">
+                            <button type="submit" class="btn btn-primary btn-round">Enregistrer</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+
+        </div>
+    </div>
+</div>

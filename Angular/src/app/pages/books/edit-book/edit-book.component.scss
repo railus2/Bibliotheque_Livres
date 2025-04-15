@@ -1,0 +1,23 @@
+.image {
+    height: 500px;
+    max-width: 400px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin:0;
+    padding: 0;
+
+    img {
+        max-height: 100%;
+        max-width: 100%;
+        object-fit: contain;
+    }
+}
+
+.form-control textarea{
+    height: 400px;
+}
+
+.image:hover img{
+    filter: brightness(0.8);
+  }

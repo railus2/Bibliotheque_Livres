@@ -1,0 +1,47 @@
+<div class="row">
+  <div class="col-md-6">
+    <div class="card">
+        <img class="card-img-top" src="assets/img/{{ book.cover_image }}" alt="Book Image">
+    </div>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h2 class="card-title">{{ book.title }}</h2>
+        <h4 class="card-subtitle text-muted">Par {{ book.author }}</h4>
+        <p>Date de parution : {{ book.publication_date | date }}</p>
+        <p>Note : {{ book.rating }}/5</p>
+          <button class="btn btn-primary" *ngIf="!isLoaned && authService.currentUser?.role !== 'admin'" (click)="borrowBook()">Emprunter</button>
+             <button class="btn btn-primary" *ngIf="isLoaned && authService.currentUser?.role !== 'admin'" disabled>Emprunté</button>
+             <button  *ngIf="authService.currentUser?.role === 'admin'" class="btn btn-primary" (click)="editBook()" >Modifier</button>
+        <hr>
+        <p class="card-text">
+          {{book.summary}}
+        </p>
+      </div>
+    </div>
+    <div class="card">
+       <div class="card-body">
+           <h5>Commentaires</h5>
+           <div *ngFor="let comment of book.comments" class="comment">
+               <div class="comment-header d-flex justify-content-between" >
+                 <p>
+                    <b >{{ comment.user.name }}</b>
+                    <span *ngIf="comment.user.role === 'admin'" class="text-primary"> (admin)</span>
+                    <small class="text-muted">{{formatRelativeTime(comment.created_at)}}</small>
+                 </p>
+                  <i *ngIf="authService.currentUser?.role === 'admin'" class="nc-icon nc-simple-remove pull-right" (click)="deleteComment(comment.id); $event.stopPropagation()"></i>
+               </div>
+                 <p>{{ comment.content }} </p>
+           </div>
+            <hr/>
+               <form  (submit)="addComment()">
+                    <div class="form-group">
+                      <textarea class="form-control" rows="3" [(ngModel)]="newComment" name="newComment" placeholder="Ajouter un commentaire..."></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary pull-right">Ajouter un commentaire</button>
+             </form>
+       </div>
+     </div>
+  </div>
+</div>

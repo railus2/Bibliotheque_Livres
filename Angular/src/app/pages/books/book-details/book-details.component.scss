@@ -1,0 +1,30 @@
+.comment {
+    margin-bottom: 10px;
+      p{
+        margin-bottom: 0;
+      }
+    .comment-header{
+      margin-bottom: 5px;
+      b{
+        margin-left: 5px;
+      }
+    }
+}
+
+.nc-simple-remove {
+    color: red;
+ }
+
+ i {
+      height:15px;
+      width:15px;
+      transition: background-color 0.2s;
+      &:hover{
+         background-color: rgba(0,0,0,0.2);
+      }
+      
+}
+
+small{
+    margin-left: 10px;
+}

@@ -1,0 +1,32 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Liste des Livres</h5>
+                <button *ngIf="authService.currentUser?.role === 'admin'" class="btn btn-primary pull-right" (click)="addBook()">Ajouter un livre</button>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div *ngFor="let book of books" class="col-md-3">
+                        <div class="card" (click)="showBook(book.id)">
+                            <img class="card-img-top" src="assets/img/{{ book.cover_image }}" alt="Card image cap">
+                            <div class="card-body">
+                                <b class="card-title">{{book.title}}</b>
+                                  <p>{{book.author}}</p>
+                                <div class="d-flex justify-content-around align-items-center">
+                                    <p class="m-0">{{book.rating}}
+                                         <i class="fa fa-star text-secondary"></i>
+                                    </p>
+                                     <div class="col-md-8 pl-1 d-flex justify-content-end align-items-center icons-action">
+                                        <i *ngIf="authService.currentUser?.role === 'admin'" class="nc-icon nc-settings-gear-65" (click)="editBook(book.id); $event.stopPropagation()"></i>
+                                        <i *ngIf="authService.currentUser?.role === 'admin'" class="nc-icon nc-simple-remove" (click)="deleteBook(book.id); $event.stopPropagation()"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

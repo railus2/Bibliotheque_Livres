@@ -1,0 +1,25 @@
+.icons-action {
+    i {
+        margin-left: 30px;
+        height:30px;
+        width:30px;
+        font-size: 30px;
+        justify-content: center;
+          transition: background-color 0.2s;
+          &:hover{
+             background-color: rgba(0,0,0,0.2);
+          }
+          
+    }
+    .nc-settings-gear-65 {
+        color: orange;
+    }
+   .nc-simple-remove {
+       color: red;
+    }
+
+}
+
+img:hover{
+    filter: brightness(0.8);
+}

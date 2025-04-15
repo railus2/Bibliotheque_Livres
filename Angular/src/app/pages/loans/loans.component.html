@@ -1,0 +1,43 @@
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-header">
+                <h5 class="card-title">Mes Emprunts</h5>
+            </div>
+            <div class="card-body">
+                <div class="table-responsive">
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th>Titre du livre</th>
+                            <th>Image du livre</th>
+                            <th>Date d'emprunt</th>
+                            <th>Date de retour prévue</th>
+                              <th>Actions</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let loan of loans">
+                            <td class="align-middle">
+                                <div class="d-flex align-items-center">
+                                       {{ loan.book.title }}
+                                   </div>
+                            </td>
+                            <td class="align-middle">
+                                <div class="d-flex justify-content-center align-items-center">
+                                     <img class="img-loan" src="assets/img/{{loan.book.cover_image}}" alt="Card image cap">
+                                </div>
+                            </td>
+                            <td class="align-middle">{{ loan.loan_date | date }}</td>
+                            <td class="align-middle">{{ loan.return_date | date }}</td>
+                               <td class="align-middle">
+                                  <button class="btn btn-sm btn-danger" (click)="deleteLoan(loan.id)">Supprimer</button>
+                             </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
